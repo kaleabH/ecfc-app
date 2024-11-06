@@ -18,13 +18,13 @@ const TabBarNavigator: React.FC<TabsProps> = ({ }) => {
   return (
     <TabBar.Navigator
       barStyle={{
-        justifyContent:"center",
+        justifyContent: "center",
         alignItems: "center"
 
       }}
-      initialRouteName= {"Home"}
+      initialRouteName={"Home"}
       screenOptions={{
-        tabBarColor:"#F2D90B",
+        tabBarColor: "#F2D90B",
 
       }}
       activeColor={"#693214"}
@@ -35,10 +35,10 @@ const TabBarNavigator: React.FC<TabsProps> = ({ }) => {
         component={Home}
         options={
           {
-          title:"Home",
-          tabBarIcon: ({color})=>(
-            <Icon name="ios-home" color={color} size={26} />
-          )
+            title: "Home",
+            tabBarIcon: ({ color }) => (
+              <Icon name="home" color={color} size={26} />
+            )
           }
         }
       />
@@ -47,10 +47,10 @@ const TabBarNavigator: React.FC<TabsProps> = ({ }) => {
         component={News}
         options={
           {
-          title:"News",
-          tabBarIcon: ({color})=>(
-            <Icon name="ios-newspaper" color={color} size={26} />
-          )
+            title: "News",
+            tabBarIcon: ({ color }) => (
+              <Icon name="newspaper" color={color} size={26} />
+            )
           }
         }
       />
@@ -59,10 +59,10 @@ const TabBarNavigator: React.FC<TabsProps> = ({ }) => {
         component={Matches}
         options={
           {
-          title:"Matches",
-          tabBarIcon: ({color})=>(
-            <Icon name="football" color={color} size={26} />
-          )
+            title: "Matches",
+            tabBarIcon: ({ color }) => (
+              <Icon name="football" color={color} size={26} />
+            )
           }
         }
       />
@@ -71,10 +71,10 @@ const TabBarNavigator: React.FC<TabsProps> = ({ }) => {
         component={Shop}
         options={
           {
-          title:"Shop",
-          tabBarIcon: ({color})=>(
-            <EIcon name="shopping-bag" color={color} size={26} />
-          )
+            title: "Shop",
+            tabBarIcon: ({ color }) => (
+              <EIcon name="shopping-bag" color={color} size={26} />
+            )
           }
         }
       />
@@ -83,10 +83,10 @@ const TabBarNavigator: React.FC<TabsProps> = ({ }) => {
         component={GroupChat}
         options={
           {
-          title:"GroupChat",
-          tabBarIcon: ({color})=>(
-            <EIcon name="chat" color={color} size={26} />
-          )
+            title: "GroupChat",
+            tabBarIcon: ({ color }) => (
+              <EIcon name="chat" color={color} size={26} />
+            )
           }
         }
       />
