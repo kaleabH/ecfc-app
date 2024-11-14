@@ -11,6 +11,7 @@ import { DrawerContent } from "../components/DrawerContent";
 import { ReactNode, useState } from "react";
 import Search from "../components/Search";
 import EIcon from 'react-native-vector-icons/Entypo';
+
 interface DrawerProps /*extends Props<DrawerParamsList, "DrawerContent">*/ {
 }
 
@@ -25,27 +26,32 @@ const DrawerNavigator: React.FC<DrawerProps> = (props) => {
         header: (props: DrawerHeaderProps): ReactNode => (
 
           <View style={styles.menuAndLogoContainer}>
-            <View style={styles.headerContainer}>
+
+
+            <View style={styles.logoContainer}>
+              <Image
+                style={{
+                  height: 90,
+                  width: 90,
+                  // transform: [{ scale: 0.6 }]
+                }}
+                source={require("../assets/Logo.png")}
+              />
+
+            </View>
+
+            <View
+              style={styles.searchAndMenuContainer}
+            >
               <TouchableOpacity
-                style={{ zIndex: 1 }}
+
+                style={styles.burgerMenu}
                 onPress={() => {
                   props.navigation.toggleDrawer();
                 }}
               >
                 <EIcon name="menu" size={40} color="#000000" />
               </TouchableOpacity>
-
-              <View style={styles.logoContainer}>
-                <Image
-                  source={require("../assets/Logo.png")}
-                  style={{ height: 90, width: 90 }}
-                />
-              </View>
-            </View>
-
-            <View
-              style={styles.searchContainer}
-            >
               <Search
                 value={value}
                 handleChange={(text) => {
@@ -85,24 +91,42 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF"
 
   },
-  searchContainer: {
-    width: "83%",
-    marginLeft: "12%",
-    position: "absolute",
-    top: 53,
-    zIndex: 0,
-    alignItems: "flex-end",
+  searchAndMenuContainer: {
+    zIndex: 2,
+    width: '100%',
+    // borderColor: 'green',
+    // borderWidth: 3,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingRight: 10,
+    position: 'absolute'
   },
   logoContainer: {
     backgroundColor: "#FFFFFF",
     borderColor: "#F2D90B",
     borderWidth: 4,
-    borderRadius: 45,
+    borderRadius: 50,
     overflow: "hidden",
-    marginRight: "35%"
+    height: 100,
+    width: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingBottom: 4,
+    zIndex: 1
   },
   menuAndLogoContainer: {
-    flex: 2,
+    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 60,
+    height: 5,
+  },
+  burgerMenu: {
+    position: 'absolute',
+    left: '6%',
+    backgroundColor: "#F2F2F2",
+    borderRadius: 20
   }
 });
 
